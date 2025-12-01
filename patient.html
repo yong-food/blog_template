@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='', initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <style>
+        *{
+    box-sizing: border-box;
+
+}
+body{
+    background:#3498DB;
+    box-sizing: border-box;
+    margin: 0;
+    top: 0;
+}
+.container{
+    max-width: 400px;
+    margin: 40px auto;
+    padding:1px;
+    background-color: rgb(163, 183, 163);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    justify-items: center;
+    align-items: center;
+}
+
+
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+button[type="submit"]{
+    width: 100%;
+    height: 40px;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+button[type="submit"]:hover{
+    background-color: #3e8e41;
+}
+
+
+    </style>
+     <header></header>
+     <body>
+      <div class="container">
+       <center> <h2>Paitent Registration Form</h2></center>
+        <form id="Registration-form" action="index.php" method="POST">
+            <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="***********" required>
+            </div>
+        
+     <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" placeholder="***********" required>
+        
+        </div>
+         <div class="form-group">
+            <label for="sex">Sex:</label>
+            <input type="text" id="sex" name="sex" placeholder="***********" required>   
+            
+        </div>
+        <div class="form-group">
+             <label for="adress">Address:</label>
+            <textarea  id="address" name="address" placeholder="***********" required></textarea>
+        </div>
+        <div class="form-group">
+         <label for="phone">phone:</label>
+            <input type="text" id="phone" name="phone" placeholder="***********" required>
+      </div>
+      <div class="form-group">
+             <label for="medical-history">medical-history:</label>
+            <textarea  id="medical-history" name="medical-history" placeholder="***********" required></textarea>
+        </div>
+        <a href="dashboard.html"><button type="submit">Register</button></a>
+  
+      </form>
+      </div>
+  
+    </body>
+    </html>

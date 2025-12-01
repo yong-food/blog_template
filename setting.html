@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - HospitalCare</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
+        }
+
+        body {
+            background: #3498DB;
+        }
+
+        /*************** HEADER ***************/
+        .header {
+            background: white;
+            padding: 15px 40px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            animation: slideDown .7s ease;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f2a59;
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #1d3f75;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #0f2a59;
+        }
+
+        /*************** SIDEBAR ***************/
+        .sidebar {
+            width: 240px;
+            background: #0f2a59 ;
+            height: calc(100vh - 70px);
+            position: fixed;
+            top: 70px;
+            left: 0;
+            padding-top: 25px;
+            color: white;
+            animation: slideLeft .7s ease;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 14px 22px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .sidebar ul li:hover,
+        .sidebar ul li.active {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /*************** MAIN CONTENT ***************/
+        .main {
+            margin-left: 240px;
+            padding: 100px 30px 30px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #0f2a59;
+            margin-bottom: 25px;
+            animation: fadeIn 1s ease;
+        }
+
+        /*************** SETTINGS SECTIONS ***************/
+        .settings-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .setting-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            animation: fadeUp .7s ease;
+        }
+
+        .setting-card h2 {
+            color: #1d3f75;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .setting-card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .setting-card label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #0f2a59;
+        }
+
+        .setting-card input,
+        .setting-card select {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #bbb;
+        }
+
+        .toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+            cursor: pointer;
+        }
+
+        .toggle input {
+            width: 20px;
+            height: 20px;
+        }
+
+        .save-btn {
+            background: #0f2a59;
+            padding: 12px 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .save-btn:hover {
+            background: #193a72;
+        }
+
+        /*************** ANIMATIONS ***************/
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">CityCare Hospital</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>🏥 CCH</h2>
+        <ul>
+          <a href="dashboard.html"><li>Dashboard</li></a> 
+          <a href="patient1.html"><li >Patients</li></a> 
+          <a href="doctor1.html" ><li >Doctors</li></a> 
+           <a href="apointment.html"><li>Appointments</li></a>
+           <a href="billibg.html"><li>Billing</li></a> 
+        
+            <li class="active">Settings</li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <h1>System Settings</h1>
+
+        <div class="settings-container">
+
+            <!-- PROFILE SETTINGS -->
+            <div class="setting-card">
+                <h2>Profile Information</h2>
+                <p>Update your name, email, and other profile details.</p>
+
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter full name">
+
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter email">
+
+                <label>Phone Number</label>
+                <input type="text" placeholder="Enter phone number">
+
+                <button class="save-btn">Save Changes</button>
+            </div>
+
+            <!-- ACCOUNT SETTINGS -->
+            <div class="setting-card">
+                <h2>Account Settings</h2>
+                <p>Manage username, hospital role, and login preferences.</p>
+
+                <label>Username</label>
+                <input type="text" placeholder="Enter username">
+
+                <label>Role</label>
+                <select>
+                    <option>Admin</option>
+                    <option>Doctor</option>
+                    <option>Nurse</option>
+                    <option>Receptionist</option>
+                </select>
+
+                <button class="save-btn">Update Account</button>
+            </div>
+
+            <!-- NOTIFICATION SETTINGS -->
+            <div class="setting-card">
+                <h2>Notifications</h2>
+                <p>Select which alerts you want to receive.</p>
+
+                <div class="toggle"><input type="checkbox"> Appointment reminders</div>
+                <div class="toggle"><input type="checkbox"> Payment updates</div>
+                <div class="toggle"><input type="checkbox"> System alerts</div>
+                <div class="toggle"><input type="checkbox"> Patient activity</div>
+
+                <button class="save-btn">Save Notifications</button>
+            </div>
+
+            <!-- SECURITY SETTINGS -->
+            <div class="setting-card">
+                <h2>Security</h2>
+                <p>Change password and protect your account.</p>
+
+                <label>Old Password</label>
+                <input type="password">
+
+                <label>New Password</label>
+                <input type="password">
+
+                <label>Confirm Password</label>
+                <input type="password">
+
+                <button class="save-btn">Update Password</button>
+            </div>
+
+            <!-- SYSTEM PREFERENCES -->
+            <div class="setting-card">
+                <h2>System Preferences</h2>
+                <p>Customize your system appearance and behavior.</p>
+
+                <label>Theme</label>
+                <select>
+                    <option>Light Mode</option>
+                    <option>Dark Mode</option>
+                </select>
+
+                <label>Language</label>
+                <select>
+                    <option>English</option>
+                    <option>French</option>
+                    <option>Spanish</option>
+                </select>
+
+                <button class="save-btn">Apply Settings</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

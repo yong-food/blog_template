@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2 class="logo">🏥 CCH</h2>
+
+        <ul class="nav-links">
+            <li class="active">Dashboard</li>
+          <a href="patient1.html"><li >Patients</li></a> 
+          <a href="doctor1.html" ><li >Doctors</li></a> 
+           <a href="apointment.html"><li>Appointments</li></a>
+           <a href="billibg.html"><li>Billing</li></a> 
+          
+           <a href="setting.html"> <li>Settings</li></a>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <header>
+            <h1>Dashboard</h1>
+            <div class="user">
+                <img src="img/doc3.jpg" alt=""style="width: 60px;">
+                
+                <span>Admin</span>
+            </div>
+        </header>
+
+        <!-- Cards Section -->
+        <div class="cards">
+
+            <div class="card">
+                <h3>Patients</h3>
+                <h1 id="count1">15</h1>
+                <p>Total Registered</p>
+            </div>
+
+            <div class="card">
+                <h3>Doctors</h3>
+                <h1 id="count2">8</h1>
+                <p>Active Specialists</p>
+            </div>
+
+            <div class="card">
+                <h3>Appointments</h3>
+                <h1 id="count3">5</h1>
+                <p>Today’s Appointments</p>
+            </div>
+
+            <div class="card">
+                <h3>Beds Available</h3>
+                <h1 id="count4">20</h1>
+                <p>Ward Capacity</p>
+            </div>
+
+        </div>
+
+        <!-- Chart Placeholder -->
+        <div class="chart">
+            <h2>Hospital Activity Overview</h2>
+            <p>(connect real data later) </p>
+        </div>
+
+    </div>
+
+    <script src="script.js">
+        function animateCounter(id, target, duration) {
+    let element = document.getElementById(id);
+    let start = 0;
+    let increment = target / (duration / 20);
+
+    let counter = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            start = target;
+            clearInterval(counter);
+        }
+        element.textContent = Math.floor(start);
+    }, 20);
+}
+
+// Example static data
+animateCounter("count1", 248, 1000);  
+animateCounter("count2", 32, 1000);
+animateCounter("count3", 57, 1000);
+animateCounter("count4", 18, 1000);
+    </script>
+
+</body>
+</html>
+
+

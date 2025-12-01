@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patients - HMS</title>
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background:  #3498DB; }
+
+    /*************** HEADER ***************/
+    .header {
+        background: white;
+        padding: 15px 40px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+
+    .logo { font-size: 24px; font-weight: 700; color: #0f2a59; }
+    .nav-links a { margin-left: 25px; text-decoration: none; color: #1d3f75; font-weight: 500; }
+    .nav-links a:hover { color: #0f2a59; }
+
+    /*************** SIDEBAR ***************/
+    .sidebar {
+        width: 240px;
+        background: #0f2a59;
+        height: calc(100vh - 70px);
+        position: fixed;
+        top: 70px;
+        left: 0;
+        padding-top: 25px;
+        color: white;
+    }
+
+    .sidebar h2 { text-align: center; margin-bottom: 25px; }
+    .sidebar a { color: white; text-decoration: none; }
+    .sidebar ul { list-style: none; }
+    .sidebar ul li {
+        padding: 14px 22px;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .sidebar ul li:hover,
+    .sidebar ul li.active { background: rgba(255,255,255,0.25); }
+
+    /*************** MAIN CONTENT ***************/
+    .main-content {
+        margin-left: 240px;
+        margin-top: 90px;
+        padding: 20px;
+    }
+
+    .page-title { font-size: 32px; margin-bottom: 20px; }
+
+    .form-box {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        margin-bottom: 30px;
+    }
+
+    .form-group { margin-bottom: 15px; }
+
+    input, select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        outline: none;
+    }
+
+    input:focus, select:focus {
+        border-color: #0f2a59;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+        padding: 12px 20px;
+        background: #0f2a59;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    button:hover { background: #0d234a; }
+
+    /*************** SEARCH ***************/
+    .search-box input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+    /*************** PATIENT LIST ***************/
+    .patient-card {
+        background: white;
+        padding: 18px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .del-btn {
+        background: #d9534f;
+        padding: 8px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        color: white;
+    }
+    .del-btn:hover { background: #b94744; }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">CityCare Hospital</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="testimonial.html">Testimonials</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>🏥 CCH</h2>
+    <ul>
+        <a href="dashboard.html"><li>Dashboard</li></a>
+        <a href="patient.html"><li class="active">Patients</li></a>
+        <a href="doctor1.html"><li>Doctors</li></a>
+        <a href="apointment.html"><li>Appointments</li></a>
+        <a href="billing.html"><li>Billing</li></a>
+      
+        <li>Settings</li>
+    </ul>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+    <h1 class="page-title">Patients</h1>
+
+    <!-- Patient Form -->
+    <div class="form-box">
+        <h2>Add New Patient</h2><br>
+
+        <div class="form-group">
+            <input type="text" id="pname" placeholder="Enter patient's name">
+        </div>
+
+        <div class="form-group">
+            <input type="number" id="age" placeholder="Enter age">
+        </div>
+
+        <div class="form-group">
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="condition" placeholder="Enter medical condition">
+        </div>
+
+        <button onclick="addPatient()">Add Patient</button>
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search patient..." oninput="filterPatients()">
+    </div>
+
+    <!-- Patient List -->
+    <div id="patientList"></div>
+
+</div>
+
+<script>
+
+function addPatient() {
+    let pname = document.getElementById("pname").value.trim();
+    let age = document.getElementById("age").value.trim();
+    let gender = document.getElementById("gender").value;
+    let condition = document.getElementById("condition").value.trim();
+
+    if (!pname || !age || !gender || !condition) {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    const list = document.getElementById("patientList");
+
+    const card = document.createElement("div");
+    card.className = "patient-card";
+
+    card.innerHTML = `
+        <div>
+            <strong>Name:</strong> ${pname}<br>
+            <strong>Age:</strong> ${age}<br>
+            <strong>Gender:</strong> ${gender}<br>
+            <strong>Condition:</strong> ${condition}
+        </div>
+        <button class="del-btn" onclick="this.parentElement.remove()">Delete</button>
+    `;
+
+    list.appendChild(card);
+
+    document.getElementById("pname").value = "";
+    document.getElementById("age").value = "";
+    document.getElementById("gender").value = "";
+    document.getElementById("condition").value = "";
+}
+
+function filterPatients() {
+    let q = document.getElementById("search").value.toLowerCase();
+    let cards = document.querySelectorAll(".patient-card");
+
+    cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(q) ? "flex" : "none";
+    });
+}
+
+</script>
+
+</body>
+</html>

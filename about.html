@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HospitalCare</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
+        }
+
+        body {
+            background: #eef3ff;
+        }
+
+        /* HEADER (UNCHANGED) */
+        .header {
+            background: white;
+            padding: 15px 30px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            animation: slideDown .7s ease;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f2a59;
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #1d3f75;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #0f2a59;
+        }
+
+        /* SIDEBAR (UNCHANGED) */
+        .sidebar {
+            width: 240px;
+            background: #0f2a59;
+            height: calc(100vh - 70px);
+            position: fixed;
+            top: 70px;
+            left: 0;
+            padding-top: 25px;
+            color: white;
+            animation: slideLeft .7s ease;
+        }
+
+        .sidebar a {
+text-decoration: none;
+color: #fff;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 14px 22px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .sidebar ul li:hover,
+        .sidebar ul li.active {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* MAIN CONTENT */
+        .main {
+            margin-left: 240px;
+            padding: 100px 40px 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #0f2a59;
+            margin-bottom: 25px;
+            animation: fadeIn 1s ease;
+        }
+
+        .about-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            margin-bottom: 30px;
+            animation: fadeUp .7s ease;
+        }
+
+        .about-section h2 {
+            color: #1d3f75;
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .team-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .team-card {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            animation: fadeUp .7s ease;
+        }
+
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+
+        .team-card h3 {
+            color: #0f2a59;
+            margin-bottom: 5px;
+        }
+
+        .team-card p {
+            color: #444;
+            font-size: 14px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER (SAME) -->
+    <div class="header">
+        <div class="logo">CityCare Hospital</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- SIDEBAR (SAME) -->
+    <div class="sidebar">
+        <h2>🏥 CCH</h2>
+        <ul>
+
+           <a href="dashboard.html"><li>Dashboard</li></a> 
+           <a href="doctor1.html"><li>Doctors</li></a> 
+           <a href="patient1.html"><li>Patients</li></a> 
+            <a href="apointment.html"><li>Appointments</li></a>
+           <a href="billibg.html"><li>Billing</li></a> 
+            <a href="setting.html"><li>Settings</li></a>
+            <a href="about.html"></a><li class="active">About Us</li>
+
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <h1>About HospitalCare</h1>
+
+        <div class="about-section">
+            <h2>Who We Are</h2>
+            <p>
+                HospitalCare is a modern, innovative hospital management system designed to simplify
+                patient care, staff coordination, billing, and administrative workflows. Our mission is
+                to improve healthcare delivery using efficient, intuitive, and user-friendly technology.
+            </p>
+            <p>
+                With advanced features and seamless automation, we help hospitals focus on what matters
+                most — saving lives and providing exceptional healthcare.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>
+                We aim to empower healthcare professionals with reliable tools that reduce stress,
+                eliminate manual errors, and enhance overall productivity.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Values</h2>
+            <p>✔ Patient-centered care</p>
+            <p>✔ Innovation and continuous improvement</p>
+            <p>✔ Efficiency and accuracy</p>
+            <p>✔ Trust, security, and transparency</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Meet Our Team</h2>
+
+            <div class="team-box">
+
+                <div class="team-card">
+                    <img src="interns/1.jpg" alt="CEO">
+                    <h3>Dr. yong nancy</h3>
+                    <p>Founder & CEO</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="interns/thumbnail/face1 (1).jpg" alt="CTO">
+                    <h3>Adamu Sharon</h3>
+                    <p>Chief Technology Officer</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="interns/thumbnail/logo (1).jpg" alt="Developer">
+                    <h3>harriette nsang</h3>
+                    <p>Lead Developer</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="interns/thumbnail/logo (5).jpg" alt="Support">
+                    <h3>Emily Davis</h3>
+                    <p>Customer Support Lead</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

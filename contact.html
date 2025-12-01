@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HospitalCare</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
+        }
+
+        body {
+            background-color: #1a73e8;
+        }
+
+        /*************** HEADER ***************/
+        .header {
+            background: white;
+            padding: 15px 30px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            animation: slideDown .7s ease;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f2a59;
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #1d3f75;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #0f2a59;
+        }
+
+        /*************** SIDEBAR ***************/
+        .sidebar {
+            width: 240px;
+            background: #0f2a59;
+            height: calc(100vh - 70px);
+            position: fixed;
+            top: 70px;
+            left: 0;
+            padding-top: 25px;
+            color: white;
+            animation: slideLeft .7s ease;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+        .sidebar a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 14px 22px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .sidebar ul li:hover,
+        .sidebar ul li.active {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /*************** MAIN ***************/
+        .main {
+            margin-left: 240px;
+            padding: 100px 30px 30px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #0f2a59;
+            margin-bottom: 25px;
+            animation: fadeIn 1s ease;
+        }
+
+        /*************** CONTACT CONTENT ***************/
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            
+        }
+
+        .contact-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h2 {
+            font-size: 22px;
+            color: #1d3f75;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .contact-card label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #0f2a59;
+        }
+
+        .contact-card input,
+        .contact-card textarea {
+            width: 100%;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #bbb;
+        }
+
+        .contact-card textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        .send-btn {
+            background: #0f2a59;
+            padding: 12px 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .send-btn:hover {
+            background: #13376c;
+        }
+
+        /*************** ANIMATIONS ***************/
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER (unchanged) -->
+    <div class="header">
+        <div class="logo">HospitalCare</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- SIDEBAR (unchanged) -->
+    <div class="sidebar">
+        <h2>🏥 CCH</h2>
+        <ul>
+                <a href="dashboard.html"><li>Dashboard</li></a> 
+          <a href="patient1.html"><li >Patients</li></a> 
+          <a href="doctor1.html" ><li >Doctors</li></a> 
+           <a href="apointment.html"><li>Appointments</li></a>
+           <a href="billibg.html"><li>Billing</li></a> 
+           <a href="patient1.html" ><li>Pharmacy</li></a>
+           <a href="setting.html" ><li >Settings</li></a>
+            
+          
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <h1>Contact Us</h1>
+
+        <div class="contact-container">
+ <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- LEFT CARD -->
+            <div class="contact-card">
+                <h2>Send Us a Message</h2>
+                <p>Have a question or need assistance? Fill out the form below.</p>
+ <input type="hidden" name="access_key" value="f11cdf20-4040-4407-97a3-fd49f96a8d34">
+                <label>Your Name</label>
+               
+                <input type="text" placeholder="Enter your name">
+
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email">
+
+                <label>Message</label>
+                <textarea placeholder="Type your message..."></textarea>
+
+                <button class="send-btn">Send Message</button>
+            </div>
+</form>
+            <!-- RIGHT CARD -->
+            <div class="contact-card">
+                <h2>Contact Information</h2>
+
+                <p><strong>📍 Address:</strong><br>
+                HospitalCare Avenue, Medical District, City</p>
+
+                <p><strong>📞 Phone:</strong><br>
+                +1 800 234 5678</p>
+
+                <p><strong>📧 Email:</strong><br>
+                support@hospitalcare.com</p>
+
+                <p><strong>🕒 Working Hours:</strong><br>
+                Mon - Fri: 8:00 AM - 6:00 PM<br>
+                Sat: 9:00 AM - 3:00 PM</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

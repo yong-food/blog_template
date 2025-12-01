@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Testimonials</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
+        }
+
+        body {
+             background: #3498DB;
+        }
+
+        /**************** HEADER ****************/
+        .header {
+            background: white;
+            padding: 15px 30px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            animation: slideDown .7s ease;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f2a59;
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #1d3f75;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #0f2a59;
+        }
+
+        /**************** SIDEBAR ****************/
+        .sidebar {
+            width: 240px;
+            background: #0f2a59;
+            height: calc(100vh - 70px);
+            position: fixed;
+            top: 70px;
+            left: 0;
+            padding-top: 25px;
+            color: white;
+            animation: slideLeft .7s ease;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+        .sidebar a{
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 14px 22px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .sidebar ul li:hover,
+        .sidebar ul li.active {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /**************** MAIN CONTENT ****************/
+        .main {
+            margin-left: 240px;
+            padding: 100px 30px 40px;
+        }
+
+        .main h1 {
+            font-size: 32px;
+            color: #0f2a59;
+            animation: fadeIn 1s ease;
+            margin-bottom: 25px;
+        }
+
+        /**************** TESTIMONIAL WRAPPER ****************/
+        .testimonial-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            min-height: 300px;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            gap: 20px;
+            animation: slideCards 25s infinite linear;
+        }
+
+        .testimonial-card {
+            min-width: 340px;
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            animation: fadeUp 1s ease;
+            flex-direction: column;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #0f2a59;
+            font-size: 18px;
+        }
+
+        .testimonial-role {
+            font-size: 14px;
+            color: #777;
+            margin-top: -4px;
+        }
+
+        /**************** ANIMATIONS ****************/
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideCards {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /*----------- mobil responsiveness--------*/
+        @media (max-width: 768px){
+            .sidebar { display: none; }
+            .main { margin-left: 0; padding: 120px 20px; }
+            .testimonial-card { min-width: 85%; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">CityCare Hospital</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="testimonial.html" class="active">Testimonials</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>🏥 CCH</h2>
+        <ul>
+            <a href="dashboard.html"><li>Dashboard</li></a> 
+          <a href="patient1.html"><li >Patients</li></a> 
+          <a href="doctor1.html" ><li >Doctors</li></a> 
+           <a href="apointment.html"><li>Appointments</li></a>
+           <a href="billibg.html"><li>Billing</li></a> 
+        
+          <a href="setting.html" ><li >Settings</li></a> 
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <h1>What Our Patients Say</h1>
+
+        <div class="testimonial-container">
+
+            <div class="testimonial-slider">
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        “The doctors and nurses were extremely kind and professional.  
+                        I felt well-taken care of during my stay.”
+                    </div>
+                    <div class="testimonial-author">John Titus</div>
+                    <div class="testimonial-role">Recovered Patient</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        “Their equipment is modern, and the service is fast.  
+                        I appreciate the attention given to patients.”
+                    </div>
+                    <div class="testimonial-author">Marylin Claire</div>
+                    <div class="testimonial-role">Surgery Patient</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        “HospitalCare is the best hospital I’ve visited.  
+                        Everyone is friendly and the environment is clean.”
+                    </div>
+                    <div class="testimonial-author">Daniel Brown</div>
+                    <div class="testimonial-role">Emergency Ward Patient</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        “The staff were patient with me and explained all treatments clearly.  
+                        I highly recommend this hospital.”
+                    </div>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-role">Check-up Patient</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        “The billing process was clear and easy.  
+                        I was impressed by the transparency and professionalism.”
+                    </div>
+                    <div class="testimonial-author">Michael Lee</div>
+                    <div class="testimonial-role">Outpatient</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

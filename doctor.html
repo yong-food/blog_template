@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='', initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <style>
+        *{
+    box-sizing: border-box;
+
+}
+body{
+    background:#3498DB;
+    box-sizing: border-box;
+    margin: 0;
+    top: 0;
+}
+.container{
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 2px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    justify-items: center;
+    align-items: center;
+}
+
+
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, select, textarea{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+button[type="submit"]{
+    width: 100%;
+    height: 40px;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+button[type="submit"]:hover{
+    background-color: #3e8e41;
+}
+
+
+    </style>
+     <header></header>
+     <body>
+      <form action="doctor.php" method="POST">
+      <div class="container">
+       <center> <h2>Doctors Registration Form</h2></center>
+        <form id="Registration-form">
+            <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="***********" required>
+            </div>
+        
+     <div class="form-group">
+            <label for="address">address:</label>
+            <input type="text" id="address" name="address" placeholder="***********" required>
+        
+        </div>
+         <div class="form-group">
+             
+            <label for="speciality">speciality</label>
+            <input type="text"  id="speciaity"name="speciality" placeholder="**************" required>
+            
+        </div>
+        <div class="form-group">
+             <label for="email">sex:</label>
+            <textarea  id="sex" name="sex" placeholder="***********" required></textarea>
+        </div>
+        <div class="form-group">
+         <label for="phone">phone_number:</label>
+            <input type="text" id="phone_number" name="phone_number" placeholder="***********" required>
+      </div>
+      
+  <button type="submit">Register</button>
+      </form>
+      </div>
+      </form>
+  
+    </body>
+    </html>
